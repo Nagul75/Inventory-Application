@@ -14,7 +14,7 @@
             <% categories.forEach(category => { %>
                 <li>
                     <a href="/<%= category %>/products">
-                        <%= category.charAt(0).toUpperCase() + category.slice(1) %> Products
+                        <%= category.name %> Products
                     </a>
                 </li>
             <% }) %>

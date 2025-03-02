@@ -4,3 +4,5 @@ const indexRouter = Router()
 
 indexRouter.get("/", indexController.showCategoriesGet)
 indexRouter.get("/:category/products", indexController.showProductsGet)
+
+module.exports = indexRouter
