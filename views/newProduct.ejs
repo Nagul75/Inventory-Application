@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+</head>
+<body>
+    <h1><%= title %></h1>
+    
+    <form action="/new/product" method="POST">
+        <label for="title">Enter Product title: </label>
+        <input type="text" name="title" id="title" required>
+        
+        <label for="price">Enter price: </label>
+        <input type="text" name="price" id="price" required>
+
+        <label for="category">Enter Category: </label>
+        <input type="text" name="category" id="category" required>
+
+        <button type="submit">Submit</button>
+    </form>
+
+</body>
+</html>
