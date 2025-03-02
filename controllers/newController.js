@@ -9,11 +9,13 @@ async function createProductGet(req, res) {
 }
 
 async function createCategoryPost(req , res) {
-
+    db.insertNewCategory(req.body)
+    res.redirect("/")
 }
 
 async function createProductPost(req, res) {
-
+    db.insertNewProduct(req.body)
+    res.redirect("/")
 }
 
 module.exports = {
