@@ -5,7 +5,7 @@ async function getAllProducts(category) {
     return rows
 }
 
-async function getAllCategories(category) {
+async function getAllCategories() {
     const {rows} = await pool.query("SELECT * FROM categories")
     return rows
 }
@@ -15,8 +15,19 @@ async function insertNewCategory(category) {
 }
 
 async function insertNewProduct(product) {
-    console.log(product.title, product.price, product.category)
-    await pool.query("INSERT INTO products (title, price, category) VALUES ($1, $2, $3)", [product.title, product.price, product.category])
+    const categories = await getAllCategories()
+    let flag = false
+    categories.forEach(category => {
+        if(product.category == category.name) {
+            flag = true
+        }
+    })
+    if(flag == true) {
+        await pool.query("INSERT INTO products (title, price, category) VALUES ($1, $2, $3)", [product.title, product.price, product.category])
+    } else {
+        await pool.query("INSERT INTO categories (name) VALUES ($1)", [product.category])
+        await pool.query("INSERT INTO products (title, price, category) VALUES ($1, $2, $3)", [product.title, product.price, product.category])
+    }
 }
 
 module.exports = {

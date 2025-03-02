@@ -12,7 +12,9 @@
         <% if(products.length > 0) { %>
             <% products.forEach(product => { %>
                 <li>
-                    <%= product.title %> - <%= product.price %>
+                    <%= product.title %> - <%= product.price %> -
+                    <a href="/update/<%= product.product_id %>"><button>Update Item</button></a> -
+                    <a href="/delete/<%= product.product_id %>"></a><button>Delete Item</button></a>
                 </li>
             <% }) %>
         <% } %>
