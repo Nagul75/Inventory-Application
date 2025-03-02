@@ -13,8 +13,8 @@
             <% products.forEach(product => { %>
                 <li>
                     <%= product.title %> - <%= product.price %> -
-                    <a href="/update/<%= product.product_id %>"><button>Update Item</button></a> -
-                    <a href="/delete/<%= product.product_id %>"></a><button>Delete Item</button></a>
+                    <a href="/update/product/<%= product.product_id %>"><button>Update Item</button></a> -
+                    <a href="/delete/product/<%= product.product_id %>"><button>Delete Item</button></a>
                 </li>
             <% }) %>
         <% } %>

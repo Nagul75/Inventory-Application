@@ -1,6 +1,7 @@
 const express = require('express')
 const indexRouter = require('./routes/indexRouter')
 const newRouter = require('./routes/newRouter')
+const deleteRouter = require('./routes/deleteRouter')
 
 const app = express()
 
@@ -9,6 +10,7 @@ app.use(express.urlencoded({extended: true}))
 
 app.use("/", indexRouter)
 app.use("/new", newRouter)
+app.use("/delete", deleteRouter)
 
 app.listen(8080, () => {
     console.log("Listening on PORT: " + 8080)

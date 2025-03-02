@@ -16,6 +16,8 @@
                     <a href="/<%= category.name %>/products">
                         <%= category.name %> Products
                     </a>
+                    <a href="/update/category/<%= category.category_id %>"><button>Update Category</button></a>
+                    <a href="/delete/category/<%= category.category_id %>"><button>Delete Category</button></a>
                 </li>
             <% }) %>
         </ul>
