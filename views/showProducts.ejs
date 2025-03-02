@@ -7,9 +7,8 @@
 </head>
 <body>
     <h1><%= title %></h1>
-
+    <% if(products.length > 0) { %>
     <ul>
-        <% if(products.length > 0) { %>
             <% products.forEach(product => { %>
                 <li>
                     <%= product.title %> - <%= product.price %> -
@@ -17,7 +16,9 @@
                     <a href="/delete/product/<%= product.product_id %>"><button>Delete Item</button></a>
                 </li>
             <% }) %>
-        <% } %>
     </ul>
+    <% } else { %>
+        <p>No products available at the moment.</p>
+    <% } %>
 </body>
 </html>

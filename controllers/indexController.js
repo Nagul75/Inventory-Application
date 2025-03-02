@@ -10,7 +10,6 @@ async function showCategoriesGet(req, res) {
 
 async function showProductsGet(req, res) {
     const category = req.params.category
-    console.log(category)
     const products = await db.getAllProducts(category)
     res.render("showProducts", {
         title: "Products",
